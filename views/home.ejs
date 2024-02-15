@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<h1>Home</h1>
+<p><%= homeSC %></p>
+
+<% renderedPosts.forEach(function(post){ %>
+<h1><%=post.title%></h1>
+<% const length = 100;
+let myString = post.body;
+let myTruncatedString = myString.substring(0,length)%>
+<p><%=myTruncatedString%> (...) <a href="/posts/<%=post.title%>">(Read more)</a></p>
+<%});
+%>
+
+<%- include("partials/footer.ejs") %>
+
